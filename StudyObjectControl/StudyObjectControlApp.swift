@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct StudyObjectControlApp: App {
+    @EnvironmentObject var timerData : TimerData
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(TimerData())
         }
     }
 }
