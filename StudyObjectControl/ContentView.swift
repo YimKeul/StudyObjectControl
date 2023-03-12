@@ -23,6 +23,10 @@ struct ContentView: View {
                 } label: {
                     Text("Reset Counter")
                 }
+                
+                NavigationLink("Next Screen") {
+                    SecondView(timerData: timerData)
+                }.padding()
 
             }
         }
