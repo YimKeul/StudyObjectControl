@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SecondView: View {
     
-    //    @ObservedObject var timerData : TimerData = TimerData()
-    //    이렇게 선언하면 Preview에서 에러가 난다.
-    //    Missing argument for parameter 'timerData' in call Insert 'timerData: <#TimerData#>'
+    // a:
+    @ObservedObject var timerData : TimerData = TimerData()
     
-    @ObservedObject var timerData : TimerData
+    
+    //  b:
+    //  @ObservedObject var timerData : TimerData
     
     
     var body: some View {
@@ -28,6 +29,10 @@ struct SecondView: View {
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondView(timerData: TimerData())
+        // a:
+        SecondView()
+        
+        // b:
+        // SecondView(timerData: TimerData())
     }
 }
