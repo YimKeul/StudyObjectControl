@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var timerData : TimerData = TimerData()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView{
+            VStack{
+                Text("Timer count = \(timerData.timeCount)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding()
+                Button {
+                    timerData.resetCount()
+                } label: {
+                    Text("Reset Counter")
+                }
+
+            }
         }
-        .padding()
     }
 }
 
